@@ -12,7 +12,8 @@ import {
   ArrowRight,
   Database,
   Code,
-  BookOpen
+  BookOpen,
+  Bot
 } from 'lucide-react';
 
 interface ActivityCardProps {
@@ -30,6 +31,16 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const activities: ActivityCardProps[] = [
+    {
+      title: 'AI 수학 튜터 챗봇',
+      description: '수학 개념이 헷갈릴 때 AI에게 바로 물어보세요! 회전체, 함수, 기하학 등 모든 수학 질문에 단계별 풀이와 함께 친절하게 답해주는 AI 튜터와 1:1 대화를 나눠볼 수 있습니다.',
+      icon: <Bot className="w-6 h-6 text-violet-400 group-hover:scale-110 transition-transform duration-300" />,
+      href: '/math-bot',
+      badge: '실행 가능 🔥',
+      badgeColor: 'bg-emerald-950/70 text-emerald-400 border-emerald-900/50',
+      status: 'active',
+      category: 'AI 튜터'
+    },
     {
       title: '3D 입체 회전체 공장',
       description: '모눈종이에 직접 그린 평면도형을 회전축을 기준으로 돌려보며 3D 원뿔, 원기둥, 구 등 다양한 회전체를 디자인하고 학급 갤러리에 저장하는 탐구 도구입니다.',
@@ -74,6 +85,7 @@ export default function Home() {
 
   const categories = [
     { id: 'all', name: '전체 활동' },
+    { id: 'AI 튜터', name: '🤖 AI 수학 튜터' },
     { id: '기하학', name: '📐 기하학 탐구' },
     { id: '게임/퍼즐', name: '🎮 수학 미니게임' }
   ];
